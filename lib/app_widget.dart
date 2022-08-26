@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:studingflu/app_controller.dart';
 import 'package:studingflu/home_page.dart';
+import 'package:studingflu/login_page.dart';
 
 class AppWidget extends StatelessWidget {
   const AppWidget({
@@ -13,7 +14,7 @@ class AppWidget extends StatelessWidget {
         animation: AppController.instance,
         builder: (context, child) {
           return MaterialApp(
-            home: HomePage(),
+            home: LoginPage(),
             theme: ThemeData(
               primarySwatch: Colors.red,
               brightness: AppController.instance.isDartTheme
