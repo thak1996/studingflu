@@ -19,8 +19,9 @@ class _HomePageState extends State<HomePage> {
             UserAccountsDrawerHeader(
               accountName: Text('user name'),
               accountEmail: Text('user@gmail.com'),
-              currentAccountPicture: CircleAvatar(
-                child: Text('sz'),
+              currentAccountPicture: ClipOval(
+                child: Image.network(
+                    'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80'),
               ),
             ),
             ListTile(
@@ -34,7 +35,7 @@ class _HomePageState extends State<HomePage> {
               leading: Icon(Icons.shopping_basket),
               title: Text("Meus pedidos"),
               onTap: () {
-                  print('compras');
+                print('compras');
               },
             ),
             ListTile(
@@ -51,8 +52,6 @@ class _HomePageState extends State<HomePage> {
         actions: [CustomSwitch()],
       ),
       body: SizedBox(
-        width: double.infinity,
-        height: double.infinity,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
