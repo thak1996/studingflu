@@ -13,6 +13,39 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: Column(
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Text('user name'),
+              accountEmail: Text('user@gmail.com'),
+              currentAccountPicture: CircleAvatar(
+                child: Text('sz'),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text("Minha conta"),
+              onTap: () {
+                Navigator.of(context).pushReplacementNamed('/');
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.shopping_basket),
+              title: Text("Meus pedidos"),
+              onTap: () {
+                  print('compras');
+              },
+            ),
+            ListTile(
+                leading: Icon(Icons.favorite),
+                title: Text("Favoritos"),
+                onTap: () {
+                  print('favoritos');
+                })
+          ],
+        ),
+      ),
       appBar: AppBar(
         title: const Text('Home Page'),
         actions: [CustomSwitch()],
