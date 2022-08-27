@@ -47,15 +47,11 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: () {
-                    if (email == "test" &&
-                        password == "test") {
-                          Navigator.of(context).pushReplacement(
-                            MaterialPageRoute(builder: (context) => HomePage()),
-                          );
-                          
-                        } else {
-                          print('errado');
-                        }
+                    if (email == "test" && password == "test") {
+                      Navigator.of(context).pushReplacementNamed('/home');
+                    } else {
+                      print('errado');
+                    }
                   },
                   child: Text('Entrar'),
                 )

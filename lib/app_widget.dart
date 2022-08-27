@@ -14,7 +14,11 @@ class AppWidget extends StatelessWidget {
         animation: AppController.instance,
         builder: (context, child) {
           return MaterialApp(
-            home: LoginPage(),
+            initialRoute: '/',
+            routes: {
+              '/':(context) => LoginPage(),
+              '/home':(context) => HomePage()
+            },
             theme: ThemeData(
               primarySwatch: Colors.red,
               brightness: AppController.instance.isDartTheme
