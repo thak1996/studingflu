@@ -17,15 +17,14 @@ class _HomePageState extends State<HomePage> {
         title: const Text('Home Page'),
         actions: [CustomSwitch()],
       ),
-      body: Container(
+      body: SizedBox(
         width: double.infinity,
         height: double.infinity,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('Contador: $counter'),
-            CustomSwitch(),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -48,6 +47,14 @@ class _HomePageState extends State<HomePage> {
             )
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.add),
+        onPressed: () {
+          setState(() {
+            counter++;
+          });
+        },
       ),
     );
   }
