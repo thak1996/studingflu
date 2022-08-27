@@ -18,7 +18,6 @@ class _LoginPageState extends State<LoginPage> {
         children: [
           SizedBox(
             height: MediaQuery.of(context).size.height,
-            width: MediaQuery.of(context).size.width,
             child: Image.asset(
               'assets/images/background.jpg',
               fit: BoxFit.cover,
@@ -39,55 +38,41 @@ class _LoginPageState extends State<LoginPage> {
                       height: 100,
                       child: Image.asset('assets/images/logo.png'),
                     ),
-                    SizedBox(height: 20),
-                    Card(
-                      child: Padding(
-                        padding: const EdgeInsets.only(
-                            left: 12, right: 12, top: 20, bottom: 12),
-                        child: Column(
-                          children: [
-                            TextField(
-                              onChanged: (text) {
-                                email = text;
-                              },
-                              keyboardType: TextInputType.emailAddress,
-                              decoration: InputDecoration(
-                                labelText: 'Email',
-                                border: OutlineInputBorder(),
-                              ),
-                            ),
-                            SizedBox(height: 20),
-                            TextField(
-                              onChanged: (text) {
-                                password = text;
-                              },
-                              obscureText: true,
-                              decoration: InputDecoration(
-                                labelText: 'Password',
-                                border: OutlineInputBorder(),
-                              ),
-                            ),
-                            SizedBox(height: 12),
-                            ElevatedButton(
-                              onPressed: () {
-                                if (email == "test" && password == "test") {
-                                  Navigator.of(context)
-                                      .pushReplacementNamed('/home');
-                                } else {
-                                  print('errado');
-                                }
-                              },
-                              child: Container(
-                                  width: double.infinity,
-                                  child: Text(
-                                    'Entrar',
-                                    textAlign: TextAlign.center,
-                                  )),
-                            )
-                          ],
-                        ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    TextField(
+                      onChanged: (text) {
+                        email = text;
+                      },
+                      keyboardType: TextInputType.emailAddress,
+                      decoration: InputDecoration(
+                        labelText: 'Email',
+                        border: OutlineInputBorder(),
                       ),
                     ),
+                    SizedBox(height: 20),
+                    TextField(
+                      onChanged: (text) {
+                        password = text;
+                      },
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        labelText: 'Password',
+                        border: OutlineInputBorder(),
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    ElevatedButton(
+                      onPressed: () {
+                        if (email == "test" && password == "test") {
+                          Navigator.of(context).pushReplacementNamed('/home');
+                        } else {
+                          print('errado');
+                        }
+                      },
+                      child: Text('Entrar'),
+                    )
                   ],
                 ),
               ),
